@@ -7,7 +7,7 @@
 [build.environment]
   # Node version
   NODE_VERSION = "18"
-  # API Base URL for backend communication
+  # API Base URL for backend communication (HTTP for now)
   VITE_API_BASE_URL = "http://128.199.30.160:3000"
 
 # SPA fallback for client-side routing
@@ -16,12 +16,10 @@
   to = "/index.html"
   status = 200
 
-# Security headers
+# Security headers (relaxed for HTTP backend)
 [[headers]]
   for = "/*"
   [headers.values]
-    # Enable HTTPS
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     # Prevent clickjacking
     X-Frame-Options = "DENY"
     # Prevent MIME type sniffing
@@ -30,8 +28,6 @@
     X-XSS-Protection = "1; mode=block"
     # Referrer policy
     Referrer-Policy = "strict-origin-when-cross-origin"
-    # TEMPORARY: Allow mixed content for HTTP backend (REMOVE IN PRODUCTION)
-    Content-Security-Policy = "upgrade-insecure-requests"
 
 # Cache static assets
 [[headers]]
