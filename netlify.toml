@@ -30,6 +30,8 @@
     X-XSS-Protection = "1; mode=block"
     # Referrer policy
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # TEMPORARY: Allow mixed content for HTTP backend (REMOVE IN PRODUCTION)
+    Content-Security-Policy = "upgrade-insecure-requests"
 
 # Cache static assets
 [[headers]]
