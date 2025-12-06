@@ -8,8 +8,7 @@
   # Node version
   NODE_VERSION = "18"
   # API Base URL for backend communication
-  # For production, use your deployed backend URL
-  VITE_API_BASE_URL = "https://your-backend-domain.com"
+  VITE_API_BASE_URL = "http://128.199.30.160:3000"
 
 # SPA fallback for client-side routing
 [[redirects]]
