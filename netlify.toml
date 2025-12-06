@@ -7,6 +7,8 @@
 [build.environment]
   # Node version
   NODE_VERSION = "18"
+  # API Base URL for backend communication
+  VITE_API_BASE_URL = "http://192.168.1.4:3000"
 
 # SPA fallback for client-side routing
 [[redirects]]
@@ -34,7 +36,3 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-# Environment variables (uncomment and add your values)
-[build.environment]
-VITE_API_BASE_URL = "http://192.168.1.4:3000"
