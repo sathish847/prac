@@ -16,9 +16,8 @@ export function AuthProvider({ children }) {
 
       if (token && userData) {
         try {
-          // Verify token with backend
-          const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
-          const response = await fetch(`${API_BASE_URL}/admin/me`, {
+          // Verify token with backend (using relative path for Netlify proxy)
+          const response = await fetch(`/api/admin/me`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -65,9 +64,8 @@ export function AuthProvider({ children }) {
 
     try {
       if (token) {
-        // Make logout API call with bearer token
-        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
-        await fetch(`${API_BASE_URL}/admin/logout`, {
+        // Make logout API call with bearer token (using relative path for Netlify proxy)
+        await fetch(`/api/admin/logout`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,

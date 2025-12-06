@@ -16,6 +16,12 @@
   to = "/index.html"
   status = 200
 
+# Proxy API requests to HTTP backend
+[[redirects]]
+  from = "/api/*"
+  to = "http://128.199.30.160:3000/:splat"
+  status = 200
+
 # Security headers (relaxed for HTTP backend)
 [[headers]]
   for = "/*"
